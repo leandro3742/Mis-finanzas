@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const analyzeImage = require('./vision');
+const analyzeImage = require('../vision');
 
 router.post('/', async (req, res) => {
   const { photo } = req.body;

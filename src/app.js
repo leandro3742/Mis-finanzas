@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 dotenv.config();
 
-const { db } = require('./database');
+const { db } = require('./config/database');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
 
-app.use('', require('./routes'))
+app.use('', require('./config/routes'))
 
 app.listen(3000, async () => {
   try {
